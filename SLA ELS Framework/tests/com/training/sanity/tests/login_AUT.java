@@ -20,7 +20,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.training.dataproviders.LoginUsers_Dataprovider;
-import com.training.dataproviders.URLs_Dataprovider;
 import com.training.generics.ScreenShot;
 
 import com.training.utility.DriverFactory;
@@ -88,7 +87,7 @@ public class login_AUT {
 		@Test(dataProvider="Login_Users", dataProviderClass = LoginUsers_Dataprovider.class)
 		//Login_Users.Dataprovider picks the usernames from excel sheet
 		//dataProviderClass is under com.training.dataproviders
-		public void loginUser(String uname) {
+		public void loginUser(String uname) throws IOException {
 			//logging in using the data provided by the dataProvider. It provides usernames from excel sheet
 			logUser.loginByUser(uname);			
 			

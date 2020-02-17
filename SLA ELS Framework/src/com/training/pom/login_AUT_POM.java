@@ -2,6 +2,7 @@ package com.training.pom;
 
 import static org.testng.Assert.assertEquals;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -12,6 +13,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.training.generics.ClickObject;
+import com.training.generics.ScreenShot;
+
 
 //POM file to login to the app for a user
 public class login_AUT_POM {
@@ -19,12 +23,17 @@ public class login_AUT_POM {
 	
 	//declaring the variables	
 	private WebDriver driver; 
-//	private String catAdded;
+	private ClickObject clickElement;
+	private ScreenShot takeScreen;
+	
+
 	
 	//declaring the constructor
 	public login_AUT_POM(WebDriver driver) {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
+		clickElement = new ClickObject(driver);
+		takeScreen = new ScreenShot(driver);
 	}
 	
 	//locating login button
@@ -42,13 +51,14 @@ public class login_AUT_POM {
 	
 	//method to click on login button
 	public void clickingLoginButton() {
-		this.loginButton.click();
+//		this.loginButton.click();
+		clickElement.clickOnObect(this.loginButton);
 	}
 	
 	//method to click in mockpass login button
 	public void clickMockPassLoginBtn(){
-		this.mockLoginButton.click();
-			
+//		this.mockLoginButton.click();
+		clickElement.clickOnObect(this.mockLoginButton);
 	}
 	
 	public void selectUserName(String username) {
@@ -71,7 +81,7 @@ public class login_AUT_POM {
 	
 		
 	//method to do all of the above in one go//
-	public void loginByUser(String username) {
+	public void loginByUser(String username) throws IOException {
 		System.out.println("running for "+ username);
 		assertTitleOfPage("SlaElsUi");
 		clickingLoginButton(); 
@@ -79,6 +89,7 @@ public class login_AUT_POM {
 		clickMockPassLoginBtn();
 		selectUserName(username);	
 		assertTitleOfPage("SlaElsUi");
+		takeScreen.captureScreenShot();
 		
 	}
 	

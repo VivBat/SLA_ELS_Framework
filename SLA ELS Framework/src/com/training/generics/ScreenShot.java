@@ -1,9 +1,12 @@
 package com.training.generics;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -14,21 +17,25 @@ import org.openqa.selenium.WebDriverException;
 
 /**
  *   in this class the path for screenshot is hard coded, please refer to others.properties file 
- *   the entry is kept, and this path shall be able to change from properties file 
+ *   the entry is kept, and this path can be changed from properties file 
  */
 public class ScreenShot {
 
 	private WebDriver driver; 
+	private static Properties properties;
 	
 	// the driver information will be given by selenium test case 
 	public ScreenShot(WebDriver driver){
 		this.driver = driver; 
+		
 	}
 	
-	public void captureScreenShot(){
+	public void captureScreenShot() throws IOException{
 		
-		// to be changed 
-		String path = "C:\\Users\\VivekPunia\\Documents\\Selenium\\Screenshots\\";
+		properties = new Properties();
+		FileInputStream inStream = new FileInputStream("./resources/others.properties");
+		properties.load(inStream);
+		String path = properties.getProperty("screenshot.folder");
 		String fileName ="";
 
 		GregorianCalendar calendar = new GregorianCalendar(); 
@@ -62,9 +69,12 @@ public class ScreenShot {
 	}
 	
 
-	public void captureScreenShot(String fileName){
+	public void captureScreenShot(String fileName) throws IOException{
 		
-		String path =  "C:\\Users\\VivekPunia\\Documents\\Selenium\\Screenshots\\";
+		properties = new Properties();
+		FileInputStream inStream = new FileInputStream("./resources/others.properties");
+		properties.load(inStream);
+		String path = properties.getProperty("screenshot.folder");
 	
 		// 1. create file 
 		// 2. capture screenshot from selenium 
