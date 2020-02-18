@@ -1,4 +1,4 @@
-package com.training.dataproviders;
+package com.testing.dataproviders;
 
 
 import java.io.IOException;
@@ -7,7 +7,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.annotations.DataProvider;
 
-import com.training.utility.ExcelUtils;
+import com.testing.utility.ExcelUtils;
 
 //dataProvider for login_AUT testcase
 public class LoginUsers_Dataprovider {

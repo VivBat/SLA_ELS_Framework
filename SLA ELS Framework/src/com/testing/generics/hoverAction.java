@@ -1,4 +1,4 @@
-package com.training.generics;
+package com.testing.generics;
 
 import java.io.IOException;
 
@@ -7,28 +7,29 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 /**
- *   Class to click on an object
+ *   Class to hover on an element
  */
-public class setText{
+public class hoverAction{
 
 	private WebDriver driver; 
 
-	public setText(WebDriver driver){
+	public hoverAction(WebDriver driver){
 		this.driver = driver; 
 	}
 	
-	public void setKeys(WebElement webEle, String keysToSend){
+	public void hoverOnElement(WebElement webEle){
 			
-		WebDriverWait ewait = new WebDriverWait(driver, 10);
-		
+		WebDriverWait ewait = new WebDriverWait(driver, 10);	
 		ewait.until(ExpectedConditions.visibilityOf(webEle));
 		
-		webEle.sendKeys(keysToSend);
+		Actions action = new Actions(driver);
+		action.moveToElement(webEle).perform();
 		
 	}
 		

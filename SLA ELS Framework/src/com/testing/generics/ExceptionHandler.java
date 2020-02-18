@@ -1,4 +1,4 @@
-package com.training.generics;
+package com.testing.generics;
 
 import java.io.IOException;
 
@@ -12,22 +12,21 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 /**
- *   Class to click on an object
+ *   Class to handle exceptions
  */
-public class ClickObject{
+public class ExceptionHandler{
 
 	private WebDriver driver; 
 
-	public ClickObject(WebDriver driver){
+	public ExceptionHandler(WebDriver driver){
 		this.driver = driver; 
 	}
 	
-	public void clickOnObect(WebElement webEle){
+	private void handleException(WebElement webEle){
 			
-		WebDriverWait ewait = new WebDriverWait(driver, 10);
-		
-		ewait.until(ExpectedConditions.elementToBeClickable(webEle));
-		webEle.click();	
+		try {
+			driver.findElement(webEle);
+		}
 		
 	}
 		

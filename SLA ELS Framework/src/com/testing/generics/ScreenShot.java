@@ -1,4 +1,4 @@
-package com.training.generics;
+package com.testing.generics;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -36,6 +36,7 @@ public class ScreenShot {
 		FileInputStream inStream = new FileInputStream("./resources/others.properties");
 		properties.load(inStream);
 		String path = properties.getProperty("screenshot.folder");
+		System.out.println(path);
 		String fileName ="";
 
 		GregorianCalendar calendar = new GregorianCalendar(); 

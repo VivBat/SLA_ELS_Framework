@@ -1,4 +1,4 @@
-package com.training.utility;
+package com.testing.utility;
 
 import java.util.concurrent.TimeUnit;
 

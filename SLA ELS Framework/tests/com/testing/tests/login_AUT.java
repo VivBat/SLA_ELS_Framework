@@ -1,4 +1,4 @@
-package com.training.sanity.tests;
+package com.testing.tests;
                  
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -9,6 +9,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,14 +20,14 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import com.training.dataproviders.LoginUsers_Dataprovider;
-import com.training.generics.ScreenShot;
-
-import com.training.utility.DriverFactory;
-import com.training.utility.DriverNames;
-import com.training.utility.ExcelUtils;
-import com.training.utility.ReturnExcelData;
-import com.training.pom.login_AUT_POM;
+import com.testing.dataproviders.LoginUsers_Dataprovider;
+import com.testing.generics.ScreenShot;
+import com.testing.pom.CreateNewInstrumntFolder_POM;
+import com.testing.pom.login_AUT_POM;
+import com.testing.utility.DriverFactory;
+import com.testing.utility.DriverNames;
+import com.testing.utility.ExcelUtils;
+import com.testing.utility.ReturnExcelData;
                 
                 
                 
@@ -39,6 +40,7 @@ public class login_AUT {
 	private static Properties properties;
 	private login_AUT_POM logUser;
 	private ReturnExcelData excelData;
+	private CreateNewInstrumntFolder_POM createFolder;
 	            
                 
 		@BeforeClass
@@ -53,6 +55,7 @@ public class login_AUT {
 		public void setUp() throws Exception {
 		  	 	driver = DriverFactory.getDriver(DriverNames.CHROME);
 		  	 	logUser = new login_AUT_POM(driver); 
+		  	 	createFolder = new CreateNewInstrumntFolder_POM(driver);
 	  		
 		  	 	////////picking up URL to the server from the excel sheet/////////
 		  	 	
@@ -72,6 +75,8 @@ public class login_AUT {
 				
 				//opening the URL
 		   		driver.get(AppURL);
+		   		driver.findElement(By.tagName("html")).sendKeys(Keys.chord(Keys.CONTROL,Keys.SUBTRACT));
+
             
 		}        
 		        
@@ -90,6 +95,7 @@ public class login_AUT {
 		public void loginUser(String uname) throws IOException {
 			//logging in using the data provided by the dataProvider. It provides usernames from excel sheet
 			logUser.loginByUser(uname);			
+//			createFolder.createNewInstrumentFolder();
 			
 		}
 		

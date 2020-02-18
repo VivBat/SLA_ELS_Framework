@@ -1,4 +1,4 @@
-package com.training.pom;
+package com.testing.pom;
 
 import static org.testng.Assert.assertEquals;
 
@@ -13,8 +13,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.training.generics.ClickObject;
-import com.training.generics.ScreenShot;
+import com.testing.generics.ClickObject;
+import com.testing.generics.ScreenShot;
 
 
 //POM file to login to the app for a user

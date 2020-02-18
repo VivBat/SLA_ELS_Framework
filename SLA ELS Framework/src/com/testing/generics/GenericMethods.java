@@ -1,4 +1,4 @@
-package com.training.generics;
+package com.testing.generics;
 
 import java.util.List;
 
