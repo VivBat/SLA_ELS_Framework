@@ -53,9 +53,12 @@ public class login_AUT {
 		        
 		@BeforeMethod
 		public void setUp() throws Exception {
-		  	 	driver = DriverFactory.getDriver(DriverNames.CHROME);
-		  	 	logUser = new login_AUT_POM(driver); 
-		  	 	createFolder = new CreateNewInstrumntFolder_POM(driver);
+			    driver = DriverFactory.getDriver(DriverNames.CHROME);
+			   
+			    //For headless browser--not complete yet
+//		  	 	driver = DriverFactory.getDriver(DriverNames.CHROME_HEADLESS);
+//		  	 	logUser = new login_AUT_POM(driver); 
+//		  	 	createFolder = new CreateNewInstrumntFolder_POM(driver);
 	  		
 		  	 	////////picking up URL to the server from the excel sheet/////////
 		  	 	
@@ -75,8 +78,7 @@ public class login_AUT {
 				
 				//opening the URL
 		   		driver.get(AppURL);
-		   		driver.findElement(By.tagName("html")).sendKeys(Keys.chord(Keys.CONTROL,Keys.SUBTRACT));
-
+		   	
             
 		}        
 		        
@@ -95,7 +97,7 @@ public class login_AUT {
 		public void loginUser(String uname) throws IOException {
 			//logging in using the data provided by the dataProvider. It provides usernames from excel sheet
 			logUser.loginByUser(uname);			
-//			createFolder.createNewInstrumentFolder();
+			createFolder.createNewInstrumentFolder();
 			
 		}
 		

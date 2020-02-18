@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 
@@ -27,8 +28,11 @@ public class DriverFactory {
 			
 		}else if(driverName.equals("IE")){
 			// TODO 
-		}else if(driverName.equals(DriverNames.PHANTOM)){
-			// TODO 
+		}else if(driverName.equals(DriverNames.CHROME_HEADLESS)){
+			System.setProperty(Driver.CHROME, Driver.CHROME_PATH);
+			 ChromeOptions options = new ChromeOptions();
+             options.addArguments("--headless");
+             WebDriver driver = new ChromeDriver(options);
 		}
 		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
