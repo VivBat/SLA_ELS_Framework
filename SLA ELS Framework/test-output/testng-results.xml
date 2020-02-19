@@ -1,60 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-02-19T11:18:56 IST" name="Default suite" finished-at="2020-02-19T11:18:57 IST" duration-ms="838">
+  <suite started-at="2020-02-19T15:09:01 IST" name="Default suite" finished-at="2020-02-19T15:10:04 IST" duration-ms="63084">
     <groups>
     </groups>
-    <test started-at="2020-02-19T11:18:56 IST" name="Default test" finished-at="2020-02-19T11:18:57 IST" duration-ms="838">
+    <test started-at="2020-02-19T15:09:01 IST" name="Default test" finished-at="2020-02-19T15:10:04 IST" duration-ms="63084">
       <class name="com.testing.tests.login_AUT">
-        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:com.testing.tests.login_AUT@6973bf95]" started-at="2020-02-19T11:18:56 IST" name="setUpBeforeClass" finished-at="2020-02-19T11:18:56 IST" duration-ms="23" status="PASS">
+        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:com.testing.tests.login_AUT@6973bf95]" started-at="2020-02-19T15:09:01 IST" name="setUpBeforeClass" finished-at="2020-02-19T15:09:01 IST" duration-ms="11" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method signature="loginUser(java.lang.String, java.lang.String)[pri:0, instance:com.testing.tests.login_AUT@6973bf95]" started-at="2020-02-19T11:18:56 IST" name="loginUser" data-provider="Login_Users" finished-at="2020-02-19T11:18:56 IST" duration-ms="769" status="FAIL">
-          <exception class="org.testng.internal.reflect.MethodMatcherException">
-            <message>
-              <![CDATA[
-[public void com.testing.tests.login_AUT.loginUser(java.lang.String,java.lang.String) throws java.io.IOException] has no parameters defined but was found to be using a data provider (either explicitly specified or inherited from class level annotation).
-Data provider mismatch
-Method: loginUser([Parameter{index=0, type=java.lang.String, declaredAnnotations=[]}, Parameter{index=1, type=java.lang.String, declaredAnnotations=[]}])
-Arguments: [(java.lang.String) S8979373D / UEN: 123456789A]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.internal.reflect.MethodMatcherException: 
-[public void com.testing.tests.login_AUT.loginUser(java.lang.String,java.lang.String) throws java.io.IOException] has no parameters defined but was found to be using a data provider (either explicitly specified or inherited from class level annotation).
-Data provider mismatch
-Method: loginUser([Parameter{index=0, type=java.lang.String, declaredAnnotations=[]}, Parameter{index=1, type=java.lang.String, declaredAnnotations=[]}])
-Arguments: [(java.lang.String) S8979373D / UEN: 123456789A]
-at org.testng.internal.reflect.DataProviderMethodMatcher.getConformingArguments(DataProviderMethodMatcher.java:43)
-at org.testng.internal.Parameters.injectParameters(Parameters.java:925)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:34)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1507)
-at org.testng.TestRunner.privateRun(TestRunner.java:770)
-at org.testng.TestRunner.run(TestRunner.java:591)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
-at org.testng.SuiteRunner.run(SuiteRunner.java:304)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
-at org.testng.TestNG.runSuites(TestNG.java:1032)
-at org.testng.TestNG.run(TestNG.java:1000)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.internal.reflect.MethodMatcherException -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.testing.tests.login_AUT@6973bf95]" started-at="2020-02-19T15:09:02 IST" name="setUp" finished-at="2020-02-19T15:09:15 IST" duration-ms="13049" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="loginUser(java.lang.String)[pri:0, instance:com.testing.tests.login_AUT@6973bf95]" started-at="2020-02-19T15:09:15 IST" name="loginUser" data-provider="Login_Users" finished-at="2020-02-19T15:09:20 IST" duration-ms="5546" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[S8979373D / UEN: 123456789A]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.testing.tests.login_AUT@6973bf95]" started-at="2020-02-19T15:09:20 IST" name="tearDown" finished-at="2020-02-19T15:09:23 IST" duration-ms="2807" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.testing.tests.login_AUT@6973bf95]" started-at="2020-02-19T15:09:23 IST" name="setUp" finished-at="2020-02-19T15:09:36 IST" duration-ms="12359" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="loginUser(java.lang.String)[pri:0, instance:com.testing.tests.login_AUT@6973bf95]" started-at="2020-02-19T15:09:36 IST" name="loginUser" data-provider="Login_Users" finished-at="2020-02-19T15:09:41 IST" duration-ms="5379" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[S8116474F / UEN: 123456789A]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.testing.tests.login_AUT@6973bf95]" started-at="2020-02-19T15:09:41 IST" name="tearDown" finished-at="2020-02-19T15:09:44 IST" duration-ms="2778" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.testing.tests.login_AUT@6973bf95]" started-at="2020-02-19T15:09:44 IST" name="setUp" finished-at="2020-02-19T15:09:56 IST" duration-ms="12426" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="loginUser(java.lang.String)[pri:0, instance:com.testing.tests.login_AUT@6973bf95]" started-at="2020-02-19T15:09:56 IST" name="loginUser" data-provider="Login_Users" finished-at="2020-02-19T15:10:01 IST" duration-ms="5264" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[S8723211E / UEN: 123456789A]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.testing.tests.login_AUT@6973bf95]" started-at="2020-02-19T15:10:01 IST" name="tearDown" finished-at="2020-02-19T15:10:04 IST" duration-ms="2858" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
       </class> <!-- com.testing.tests.login_AUT -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

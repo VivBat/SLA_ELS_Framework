@@ -7,7 +7,7 @@
         <methods>
           <include name="setUp"/>
           <include name="setUpBeforeClass"/>
-          <include name="loginUser"/>
+          <include name="loginUser" invocation-numbers="0 1 2"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.testing.tests.login_AUT -->
