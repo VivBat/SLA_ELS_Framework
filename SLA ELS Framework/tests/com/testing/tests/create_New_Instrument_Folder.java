@@ -40,7 +40,7 @@ public class create_New_Instrument_Folder {
 	private static Properties properties;
 	private login_AUT_POM logUser;
 	private ReturnExcelData excelData;
-
+    private CreateNewInstrumntFolder_POM createNew;
 	            
                 
 		@BeforeClass
@@ -57,9 +57,11 @@ public class create_New_Instrument_Folder {
 			   
 			    //For headless browser--not complete yet
 //		  	 	driver = DriverFactory.getDriver(DriverNames.CHROME_HEADLESS);
-//		  	 	logUser = new login_AUT_POM(driver); 
+
 //		  	 	createFolder = new CreateNewInstrumntFolder_POM(driver);
-	  		
+	  		    
+			    createNew = new CreateNewInstrumntFolder_POM(driver); 
+			    
 		  	 	////////picking up URL to the server from the excel sheet/////////
 		  	 	
 		  	 	//new  object instance of ReturnExcelData() which will URLs data from excel
@@ -91,12 +93,9 @@ public class create_New_Instrument_Folder {
 		}		
 				
 
-		@Test(dataProvider="Login_Users", dataProviderClass = LoginUsers_Dataprovider.class)
-		//Login_Users.Dataprovider picks the usernames from excel sheet
-		//dataProviderClass is under com.training.dataproviders
-		public void loginUser(String uname) throws IOException {
-			//logging in using the data provided by the dataProvider. It provides usernames from excel sheet			
-			logUser.loginByUser(uname);			
+		@Test
+		public void createFolder(String foldername) throws IOException {			
+			createNew.createNewInstrumentFolder(foldername);		
 		
 		}
 		

@@ -56,10 +56,11 @@ public class login_AUT {
 			    driver = DriverFactory.getDriver(DriverNames.CHROME);
 			   
 			    //For headless browser--not complete yet
-//		  	 	driver = DriverFactory.getDriver(DriverNames.CHROME_HEADLESS);
-//		  	 	logUser = new login_AUT_POM(driver); 
+//		  	 	driver = DriverFactory.getDriver(DriverNames.CHROME_HEADLESS); 
 //		  	 	createFolder = new CreateNewInstrumntFolder_POM(driver);
-	  		
+	  		    
+			    logUser = new login_AUT_POM(driver);
+			    
 		  	 	////////picking up URL to the server from the excel sheet/////////
 		  	 	
 		  	 	//new  object instance of ReturnExcelData() which will URLs data from excel
