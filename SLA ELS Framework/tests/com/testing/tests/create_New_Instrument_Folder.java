@@ -31,7 +31,7 @@ import com.testing.utility.ReturnExcelData;
                 
                 
                 
-public class login_AUT {
+public class create_New_Instrument_Folder {
 	             
 	static WebDriver driver;
 	static XSSFWorkbook workbook;

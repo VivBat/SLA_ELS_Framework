@@ -16,6 +16,7 @@ import org.openqa.selenium.support.PageFactory;
 import com.testing.generics.ClickObject;
 import com.testing.generics.ScreenShot;
 import com.testing.generics.hoverAction;
+import com.testing.generics.setText;
 
 
 //POM file to login to the app for a user
@@ -27,6 +28,7 @@ public class CreateNewInstrumntFolder_POM {
 	private ClickObject clickElement;
 	private ScreenShot takeScreen;
 	private hoverAction hover;
+	private setText enterText;
 
 	
 	//declaring the constructor
@@ -36,6 +38,7 @@ public class CreateNewInstrumntFolder_POM {
 		clickElement = new ClickObject(driver);
 		takeScreen = new ScreenShot(driver);
 		hover = new hoverAction(driver);
+		enterText = new setText(driver);
 	}
 	
 	//locating e-lodgement button
@@ -45,6 +48,10 @@ public class CreateNewInstrumntFolder_POM {
 	//locating'create new instrument folder' button
 	@FindBy(xpath="//a[contains(text(),'CREATE NEW INSTRUMENT FOLDER LIBRARY')]")
 	private WebElement createNewFolderButton; 
+	
+	//locating intrument folder name input field
+	@FindBy(id="instFolder")
+	private WebElement instFolderName;
 	
 	
 	//hover on e-lodgement button
@@ -59,6 +66,12 @@ public class CreateNewInstrumntFolder_POM {
 		clickElement.clickOnObect(this.createNewFolderButton);
 	}
 	
+	//method to input folder name
+	public void inputFolderName(String folderName) {
+		enterText.setKeys(instFolderName, folderName);
+	}
+	
+	
 	
 	//method to assert title
 	public void assertTitleOfPage(String title) {
@@ -68,10 +81,12 @@ public class CreateNewInstrumntFolder_POM {
 	
 		
 	//method to do all of the above in one go//
-	public void createNewInstrumentFolder() throws IOException {
+	public void createNewInstrumentFolder(String foldername) throws IOException {
 		hoverOnLodgementButton();
-		takeScreen.captureScreenShot();
+//		takeScreen.captureScreenShot();
 		clickElement.clickOnObect(this.createNewFolderButton);
+//		takeScreen.captureScreenShot();
+		inputFolderName(foldername);
 		takeScreen.captureScreenShot();
 		
 	}
